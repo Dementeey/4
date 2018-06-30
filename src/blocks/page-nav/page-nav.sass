@@ -1,0 +1,22 @@
+.page-nav
+  +flex-container(row, space-between, center)
+  border: 1px solid red
+  min-height: $page-nav-min-height
+
+  &__items
+    +flex-container(row, space-between)
+    +indenting-reset
+    width: 40%
+    min-height: $page-nav-min-height
+    list-style-type: none
+
+
+  &__item
+    +flex-container(row, space-between, center)
+
+
+  &__link
+    display: flex
+    text-decoration: none
+    color: $primary-color
+    border-bottom: 1px solid gold

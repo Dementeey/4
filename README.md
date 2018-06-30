@@ -9,6 +9,7 @@ Plugins:
 1. browser-sync
 1. browserSync.reload
 1. gulp
+1. gulp-htmlmin
 1. gulp-sass
 1. gulp-autoprefixer
 1. gulp-watch
@@ -20,7 +21,6 @@ Plugins:
 1. imagemin-pngquant
 1. imagemin-jpegoptim
 1. rimraf
-
 
 If you have previously installed a version of gulp globally, please run npm rm --global gulp to make sure your old version doesn't collide with gulp-cli.
 - Install gulp globally and browser-sync:

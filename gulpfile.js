@@ -14,11 +14,11 @@ const rimraf = require('rimraf');
 const svgmin = require('gulp-svgmin');
 const imageminJpegoptim = require('imagemin-jpegoptim');
 const babel = require('gulp-babel');
-
+const htmlmin = require('gulp-htmlmin');
 const path = {
   build: {                                  // Тут мы укажем куда складывать готовые после сборки файлы
     html: 'build/',
-    js: './build/js/',
+    js: 'build/',
     css: 'build/css/',
     fonts: 'build/fonts/',
     img: 'build/img/',
@@ -27,7 +27,7 @@ const path = {
   },
   src: {                                    // Пути откуда брать исходники
     html: 'src/**/*.html',                  // Синтаксис src/**/*.html говорит gulp что мы хотим взять все файлы с расширением .html из всех папок после src
-    js: 'src/js/*.js',
+    js: 'src/**/*.js',
     style: 'src/sass/index.sass',           // for SASS
     fonts: 'src/fonts/**/*.*',
     img: 'src/img/**/*.+(png|jpg)',         // Синтаксис img/**/*.* означает - взять все файлы всех расширений
@@ -66,6 +66,7 @@ gulp.task('clean', function (cb) {          // remove build/**
 
 gulp.task('html:build', function () {
   gulp.src(path.src.html)
+    .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(path.build.html))
     .pipe(reload({stream: true}));
 });
