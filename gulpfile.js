@@ -20,28 +20,22 @@ const path = {
     html: 'build/',
     js: 'build/',
     css: 'build/css/',
-    fonts: 'build/fonts/',
     img: 'build/img/',
-    svg: 'build/img/',
-    video: 'build/video/'
+    svg: 'build/img/'
   },
   src: {                                    // Пути откуда брать исходники
     html: 'src/**/*.html',                  // Синтаксис src/**/*.html говорит gulp что мы хотим взять все файлы с расширением .html из всех папок после src
     js: 'src/**/*.js',
     style: 'src/sass/index.sass',           // for SASS
-    fonts: 'src/fonts/**/*.*',
     img: 'src/img/**/*.+(png|jpg)',         // Синтаксис img/**/*.* означает - взять все файлы всех расширений
-    svg: 'src/img/**/*.svg',                // Синтаксис img/**/*.* означает - взять все файлы всех расширений
-    video: 'src/video/*.+(mp4|mov|webm)'    // из папки и из вложенных каталогов
+    svg: 'src/img/**/*.svg'               // Синтаксис img/**/*.* означает - взять все файлы всех расширений   // из папки и из вложенных каталогов
   },
   watch: {                                  // Тут мы укажем, за изменением каких файлов мы хотим наблюдать
     html: 'src/**/*.html',
     js: 'src/**/*.js',
     style: 'src/**/*.sass',                 // for SASS
-    fonts: 'src/fonts/**/*.*',
     img: 'src/img/**/*.+(png|jpg)',
     svg: 'src/img/**/*.svg',
-    video: 'src/video/*.+(mp4|mov|webm)'
   },
   clean: './build'
 };
@@ -65,8 +59,10 @@ gulp.task('clean', function (cb) {          // remove build/**
 });
 
 gulp.task('html:build', function () {
-  gulp.src(path.src.html)
-    .pipe(htmlmin({collapseWhitespace: true}))
+  return gulp.src(path.src.html)
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(gulp.dest(path.build.html))
     .pipe(reload({stream: true}));
 });
@@ -74,7 +70,7 @@ gulp.task('html:build', function () {
 gulp.task('js:build', function () {
   return gulp.src(path.src.js)
     .pipe(babel({
-        presets: ['env']
+      presets: ['env']
     }))
     .pipe(uglify())
     .pipe(gulp.dest(path.build.js))
@@ -127,27 +123,13 @@ gulp.task('imageSvg:build', function () {
     .pipe(reload({stream: true}));
 });
 
-gulp.task('fonts:build', function() {
-  return gulp.src(path.src.fonts)
-    .pipe(gulp.dest(path.build.fonts))
-    .pipe(reload({stream: true}));
-
-});
-
-gulp.task('video:build', function () {
-  return gulp.src(path.src.video)
-    .pipe(gulp.dest(path.build.video))
-    .pipe(reload({stream: true}));
-});
 
 gulp.task('build', [
   'html:build',
   'js:build',
   'style:build',
-  'fonts:build',
   'image:build',
   'imageSvg:build',
-  'video:build'
 ]);
 
 gulp.task('watch', function(){
@@ -165,12 +147,6 @@ gulp.task('watch', function(){
   });
   watch([path.watch.svg], function(event, cb) {
     gulp.start('imageSvg:build');
-  });
-  watch([path.watch.fonts], function(event, cb) {
-    gulp.start('fonts:build');
-  });
-  watch([path.watch.video], function(event, cb) {
-    gulp.start('video:build');
   });
 });
 
