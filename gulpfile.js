@@ -15,6 +15,7 @@ const svgmin = require('gulp-svgmin');
 const imageminJpegoptim = require('imagemin-jpegoptim');
 const babel = require('gulp-babel');
 const htmlmin = require('gulp-htmlmin');
+const eslint = require('gulp-eslint');
 const path = {
   build: {                                  // Тут мы укажем куда складывать готовые после сборки файлы
     html: 'build/',
@@ -69,6 +70,8 @@ gulp.task('html:build', function () {
 
 gulp.task('js:build', function () {
   return gulp.src(path.src.js)
+    .pipe(eslint())
+    .pipe(eslint.formatEach('compact', process.stderr))
     .pipe(babel({
       presets: ['env']
     }))

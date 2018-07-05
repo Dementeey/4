@@ -10,6 +10,7 @@ Plugins:
 1. browserSync.reload
 1. gulp
 1. gulp-htmlmin
+1. gulp-eslint
 1. gulp-sass
 1. gulp-autoprefixer
 1. gulp-watch

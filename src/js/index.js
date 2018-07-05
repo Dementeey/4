@@ -6,4 +6,3 @@ document.addEventListener('DOMContentLoaded', function() {
 alert('this is not a touch device');
 document.documentElement.classList.add('no-touch');
 })
-
