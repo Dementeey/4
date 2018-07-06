@@ -14,8 +14,11 @@ body
   +indenting-reset
 
 .container
-  width: $laptop-width-container
+  width: 1170px
   margin: 0 auto
+
+  @media screen and (max-width: $laptop-width - 1)
+    width: $laptop-width-container
 
   @media screen and (max-width: $tablet-width)
     width: $tablet-width-container

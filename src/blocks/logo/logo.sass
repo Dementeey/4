@@ -1,5 +1,5 @@
 .logo
-  color: $primary-color;
+  color: $primary-text-color
   text-decoration: none
 
   +flex-container(column, space-between, center )
@@ -7,9 +7,11 @@
   &__primary-text
     color: $logo-color
     font-size: 2rem
+    font-family: $primary-font-family
+    font-weight: normal
 
   &__secondary-text
     font-size: 0.813rem
-    letter-spacing: 1px
-
-
+    letter-spacing: 0.7px
+    font-family: $secondary-font-family
+    font-weight: normal

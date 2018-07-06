@@ -7,3 +7,14 @@
   flex-direction: $direct
   justify-content: $jc
   align-items: $ai
+
+=media__max-width__set-width($max-width, $type, $set-width)
+  @media screen and (max-width: $max-width)
+    @if $type == min
+      min-width: $set-width
+    @else if $type == max
+      max-width: $set-width
+    @else if $type == width
+      width: $set-width
+    @else
+      width: $set-width

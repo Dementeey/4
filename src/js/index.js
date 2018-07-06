@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
+  // eslint-disable-next-line
   if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
-  return alert('this is a touch device');
-}
+    return document.documentElement.classList.add('touch');
+  }
 
-alert('this is not a touch device');
-document.documentElement.classList.add('no-touch');
+  return document.documentElement.classList.add('no-touch');
 })
