@@ -1,0 +1,32 @@
+.card
+  +flex-container(column, center, center)
+  flex: 1 1 270px
+  min-height: 425px
+  background-color: $bg-white-color
+  border-radius: 7px
+
+  .no-touch &:hover
+    box-shadow: 0px 2px 30px 5px  $shadow-color
+
+  &__img
+    width: 100%
+    height: auto
+    border-radius: 10px 10px 0 0
+
+  &__title
+    color: $secondary-color
+    font-size: 1.25rem
+    font-family: $primary-font-family
+    font-weight: normal
+    margin: 0
+    margin: 1.563rem 0
+
+  &__btn
+    margin-bottom: 2.188rem
+    color: $btn-color
+    background: transparent
+    border: 2px solid $pets-btn-color
+    border-radius: 70px
+
+    .no-touch &:hover
+      background-color: $pets-btn-color

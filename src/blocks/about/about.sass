@@ -1,0 +1,28 @@
+.about
+  background-color: $bg-white-color
+
+  &__wrap
+    +flex-container(row, center, center)
+    padding: 90px 170px
+    width: 100%
+
+  &__img
+    width: 300px
+    height: 400px
+    margin-right: 120px
+
+  &__wrap-text
+    +flex-container(column, center, center)
+    width: 70%
+
+  &__title
+    +title-common-MT(2.188rem)
+
+  &__text
+    margin: 0
+    max-width: 415px
+    font-size: 0.938rem
+    color: $secondary-text-color
+    line-height: 1.5rem
+    margin-top: 2.188rem
+    font-family: $secondary-font-family

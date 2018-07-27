@@ -1,0 +1,60 @@
+.pets
+  background-color: $bg-gray-color
+
+  &__wrap
+    +flex-container(column, center, center)
+    width: 100%
+
+  &__title
+    +title-common-MT(5rem)
+    max-width: 400px
+    text-align: center
+
+  &__btn
+    margin: 3.375rem 0
+    background-color: $pets-btn-color
+    color: $btn-color
+
+    .no-touch &:hover
+      background-color: $pets-btn-hover-color
+
+  //slider
+  &__silder-wrap
+    +flex-container(row, space-between, center)
+    width: 100%
+
+  &__slider-items
+    +indenting-reset
+    margin-top: 3.375rem
+    list-style-type: none
+    +flex-container(row, space-between, center)
+    flex-wrap: nowrap
+
+  &__slider-item
+    margin-right: 50px
+
+    &:last-child
+      margin-right: 0
+
+
+  &__silder-arrow-left,
+  &__silder-arrow-right
+    position: relative
+    padding: 0
+    width: 50px
+    height: 50px
+    border-radius: 50%
+    background: transparent
+    border: 2px solid $pets-btn-color
+
+    .no-touch &:hover
+      background-color: $pets-btn-color
+
+    svg
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+
+  &__silder-arrow-right
+    transform: scale(-1)
