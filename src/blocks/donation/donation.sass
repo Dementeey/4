@@ -1,0 +1,66 @@
+.donation
+  background-color: $bg-gray-color
+
+  &__wrap
+    +flex-container(row, center, center)
+    width: 100%
+    padding: 70px 0
+
+  &__img
+    width: 50%
+
+  &__content
+    +flex-container(column, space-between, flex-start)
+    width: 50%
+    max-width: 360px
+    min-height: 280px
+    margin-left: 45px
+
+  &__title
+    +title-common-MT(0rem)
+    max-width: 400px
+
+  &__bank-info
+    +flex-container(column, space-between, center)
+    font-family: $primary-font-family
+    color: $secondary-color
+    width: 300px
+    max-width: 315px
+
+  &__bank-name
+    width: 100%
+    margin-top: 35px
+    font-size: 0.938rem
+
+  &__card-number
+    margin-top: 12px
+    position: relative
+    display: block
+    width: 100%
+    height: 47px
+    line-height: 47px
+    padding-left: 60px
+    border-radius: 10px
+    font-size: 1.25rem
+    font-family: $Times-font-family
+    color: $donation-card-color
+    background-color: $donation-card-bg-color
+
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 14px
+      transform: translateY(-50%)
+      width: 30px
+      height: 22px
+      background: url('../img/credit-card.svg') no-repeat center
+      cursor: pointer
+      background-size: cover
+
+  &__text
+    margin-top: 30px
+    color: $donation-color
+    font-size: 0.75rem
+    font-family: $secondary-font-family
+
