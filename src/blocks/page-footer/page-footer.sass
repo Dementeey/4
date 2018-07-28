@@ -1,0 +1,66 @@
+.page-footer
+  background: $bg-header-footer-color url('../img/bg-footer.jpg') no-repeat 70% 100%
+  background-size: cover
+  height: 362px
+  color: $primary-color
+
+  &__wrap
+    +flex-container(row, space-between, flex-start)
+    width: 770px
+
+  &__first-content,
+  &__second-content
+    +flex-container(column, center, flex-start)
+    width: 285px
+
+  &__first-title,
+  &__second-title
+    +title-common-MT(5rem)
+    color: inherit
+    margin-bottom: 35px
+
+  &__first-email,
+  &__first-phone,
+  &__second-address
+    position: relative
+    display: flex
+    align-items: center
+    height: 45px
+    padding-left: 60px
+    font-size: 1.25rem
+    color: $footer-color
+    text-decoration: none
+
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 0
+      width: 45px
+      height: 45px
+      transform: translateY(-50%)
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      background-size: 40px
+
+  &__first-email
+    margin-bottom: 35px
+
+    &::before
+      background-image: url('../img/email.svg')
+
+  &__first-phone
+    &::before
+      background-image: url('../img/telephone.svg')
+
+  &__second-address
+    padding-left: 45px
+    margin-bottom: 35px
+    &::before
+      left: -5px
+      background-image: url('../img/marker.svg')
+
+  &__second-address:last-child
+    margin-bottom: 0
+
+
