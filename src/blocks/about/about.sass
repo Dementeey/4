@@ -6,10 +6,17 @@
     padding: 90px 170px
     width: 100%
 
+    @media screen and (max-width: $laptop-s-width)
+      padding-right: 80px
+      padding-left: 0px
+
   &__img
     width: 300px
     height: 400px
     margin-right: 120px
+
+    @media screen and (max-width: $laptop-s-width)
+      margin-right: 60px
 
   &__wrap-text
     +flex-container(column, center, center)

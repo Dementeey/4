@@ -6,12 +6,13 @@
   background: $bg-header-footer-color url("../img/bg-header.jpg") no-repeat 70% 100%
   background-size: cover
 
-  @media screen and (max-width: 970px)
-    background-size: 155% 100%
+  @media screen and (max-width: $laptop-s-width)
+    min-height: 650px
+
 
   @media screen and (max-width: $tablet-width)
-    background-size: contain
-    min-height: 300px
+    background-size: cover
+    min-height: 500px
 
 
   &__content
@@ -19,7 +20,11 @@
     width: 40%
     +media__max-width__set-width($laptop-width, width, 30%)
 
-    // @media screen and (max-width: $tablet-width)
+    @media screen and (max-width: $laptop-s-width)
+      margin-top: 157px
+
+    @media screen and (max-width: $tablet-width)
+      margin-top: 67px
 
 
     // @media screen and (max-width: $mobile-width)
@@ -34,12 +39,24 @@
     font-family: $primary-font-family
     font-weight: normal
 
+    @media screen and (max-width: $tablet-width)
+      font-size: 1.75rem
+
   &__text
     font-size: 0.938rem
     margin: 0
     margin-top: 2.813rem
     font-family: $secondary-font-family
 
+    @media screen and (max-width: $tablet-width)
+      font-size: 0.9rem
+
   &__btn
+    display: block
     margin-top: 2.813rem
+    max-width: 205px
+
+    @media screen and (max-width: $tablet-width)
+      margin-top: 2.813rem
+      max-width: 165px
 

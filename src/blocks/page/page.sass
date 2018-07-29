@@ -4,6 +4,13 @@
 html
   font-size: 16px
 
+  @media screen and (max-width: $laptop-m-width)
+    font-size: 14px
+
+  @media screen and (max-width: $laptop-s-width)
+    font-size: 13px
+
+
 body
   font-size: 1rem
   line-height: 1.2
@@ -19,6 +26,9 @@ body
 
   @media screen and (max-width: $laptop-width - 1)
     width: $laptop-width-container
+
+  @media screen and (max-width: $laptop-m-width)
+     width: $tablet-width-container
 
   @media screen and (max-width: $tablet-width)
     width: $tablet-width-container

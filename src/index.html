@@ -41,7 +41,7 @@
           est in porttitor  porttitor. Duis sodales elementum ipsum, vehicula
           condimentum erat fringilla et.
         </p>
-        <button class="page-header__btn btn">Make a friend</button>
+        <a class="page-header__btn btn" href="pets.html">Make a friend</a>
       </div>
     </div>
   </header> <!-- page-header END -->
@@ -102,7 +102,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#444" d="M15 7v2H4v2L1 8l3-3v2z"/></svg>
             </button>
           </div> <!-- slider END -->
-          <button class="pets__btn btn">Get to know the rest</button>
+          <a class="pets__btn btn" href="pets.html">Get to know the rest</a>
         </div>
       </div>
 
@@ -185,11 +185,16 @@
     </div>
   </footer>  <!-- page-footer END -->
 
-  <div class="modal" style="display: none"> <!--  DEL atr style   -->
+  <div class="modal modal--hide">
+    <div class="modal__overlay"></div>
+
     <div class="modal__v1">
 
       <article class="card-modal">
-        <img class="card-mogal__img" src="../img/card-img-1.jpg" alt="Dog">
+        <button class="card-modal__close-btn  btn"></button>
+        <div class="card-mogal__wrap-img">
+          <img class="card-mogal__img" src="../img/card-img-1.jpg" alt="Dog">
+        </div>
 
         <div class="card-modal__content">
           <header class="card-modal__header">
