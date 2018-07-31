@@ -1,0 +1,56 @@
+.burger-wrap
+  display: flex
+  justify-content: center
+  align-items: center
+  position: fixed
+  top: 0
+  left: 0
+  background-color: $bg-header-footer-color
+  border-bottom: 1px solid $primary-color
+  width: 100vw
+  height: 50px
+  cursor: pointer
+  z-index: 9999999
+
+  @media screen and (min-width: 600px)
+    display: none
+
+.burger
+  position: relative
+  margin: auto
+  background-color: #fff
+  width: 30px
+  height: 5px
+  transition: .3s
+
+  &::before,
+  &::after
+    content: ''
+    position: absolute
+    background-color: #fff
+    width: 30px
+    height: 5px
+    left: 0
+    box-shadow: 0 0 3px 1px rgba(0,0,0, 0.3)
+    transition: .3s
+  &::before
+    top: -10px
+
+  &::after
+    top: 10px
+
+  &--active
+    top: 15px
+    transition: .3s
+
+    &::before,
+    &::after
+      left: 0
+      transition: .3s
+    &::before
+      transform: rotate(45deg)
+      top: -17px
+
+    &::after
+      transform: rotate(-45deg)
+      top: -17px

@@ -1,13 +1,15 @@
 // Variables
-const cardBtn      = document.querySelectorAll('.card__btn');
-const modal        = document.querySelector('.modal');
-const modalOverlay = document.querySelector('.modal__overlay');
-const modalCloseBtn  = document.querySelector('.card-modal__close-btn');
+const cardBtn       = document.querySelectorAll('.card__btn');
+const modal         = document.querySelector('.modal');
+const modalOverlay  = document.querySelector('.modal__overlay');
+const modalCloseBtn = document.querySelector('.card-modal__close-btn');
+const burgerWrap    = document.querySelector('.burger-wrap');
+const burger        = document.querySelector('.burger');
+const navMenu       = document.querySelector('.page-nav__items');
 
 
 // Function
 const showModal = () => {
-  console.log('click');
 
   if ( modal.classList.contains('modal--hide') ) {
     document.body.style.overflow = 'hidden';
@@ -17,6 +19,20 @@ const showModal = () => {
 
   document.body.style.overflow = '';
   modal.classList.add('modal--hide');
+  return
+}
+const showMobileMenu = () => {
+
+  if ( burger.classList.contains('burger--active') ) {
+    document.body.style.overflow = '';
+    burger.classList.remove('burger--active');
+    navMenu.classList.remove('page-nav__items--mobile-menu');
+    return
+  }
+
+  document.body.style.overflow = 'hidden';
+  burger.classList.add('burger--active');
+  navMenu.classList.add('page-nav__items--mobile-menu');
   return
 }
 
@@ -42,3 +58,5 @@ for (let i = 0; i < cardBtn.length; i += 1) {
 }
 modalOverlay.addEventListener('click', showModal);
 modalCloseBtn.addEventListener('click', showModal);
+
+burgerWrap.addEventListener('click', showMobileMenu);

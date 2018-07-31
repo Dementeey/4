@@ -12,6 +12,19 @@
 
     +media__max-width__set-width($laptop-width, min, 400px)
 
+    @media screen and (max-width: 600px)
+      display: none
+
+    &--mobile-menu
+        +flex-container(column, space-between, center)
+        position: fixed
+        top: 50px
+        left: 0
+        width: 100vw
+        background: $bg-header-footer-color
+        border-bottom: 1px solid $primary-color
+        z-index: 9999999
+
   &__item
     +flex-container(row, space-between, center)
 
@@ -23,6 +36,10 @@
     font-size: .938rem
     line-height: 29px
     font-family: $secondary-font-family
+    border-bottom: 1px solid transparent
 
     .no-touch &:hover
       border-bottom: 1px solid $page-nav-hover-link-color
+
+    // @media screen and (max-width: 600px)
+    //   width: 100%
