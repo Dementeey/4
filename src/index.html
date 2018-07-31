@@ -73,31 +73,52 @@
             <button class="pets__silder-arrow-left btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#444" d="M15 7v2H4v2L1 8l3-3v2z"/></svg>
             </button>
-
-            <ul class="pets__slider-items">
-              <li class="pets__slider-item">
-                <div class="card">
-                  <img src="../img/card-img-1.jpg" alt="Katrine - Cat" class="card__img">
-                  <h3 class="card__title">Katrine</h3>
-                  <button class="card__btn btn">Learn More</button>
-                </div>
-              </li>
-              <li class="pets__slider-item">
-                <div class="card">
-                  <img src="../img/card-img-2.jpg" alt="Jennifer - Dog" class="card__img">
-                  <h3 class="card__title">Jennifer</h3>
-                  <button class="card__btn btn">Learn More</button>
-                </div>
-              </li>
-              <li class="pets__slider-item">
-                <div class="card">
-                  <img src="../img/card-img-3.jpg" alt="Woody - Dog" class="card__img">
-                  <h3 class="card__title">Woody</h3>
-                  <button class="card__btn btn">Learn More</button>
-                </div>
-              </li>
-            </ul>
-
+            <div class="pets__gallery">
+              <ul class="pets__slider-items">
+                <li class="pets__slider-item">
+                  <article class="card">
+                    <img src="../img/card-img-1.jpg" alt="Katrine - Cat" class="card__img">
+                    <h3 class="card__title">Katrine</h3>
+                    <button class="card__btn btn">Learn More</button>
+                  </article>
+                </li>
+                <li class="pets__slider-item">
+                  <article class="card">
+                    <img src="../img/card-img-2.jpg" alt="Jennifer - Dog" class="card__img">
+                    <h3 class="card__title">Jennifer</h3>
+                    <button class="card__btn btn">Learn More</button>
+                  </article>
+                </li>
+                <li class="pets__slider-item">
+                  <article class="card">
+                    <img src="../img/card-img-3.jpg" alt="Woody - Dog" class="card__img">
+                    <h3 class="card__title">Woody</h3>
+                    <button class="card__btn btn">Learn More</button>
+                  </article>
+                </li>
+                <li class="pets__slider-item">
+                  <article class="card">
+                    <img src="../img/card-img-1.jpg" alt="Katrine - Cat" class="card__img">
+                    <h3 class="card__title">Katrine</h3>
+                    <button class="card__btn btn">Learn More</button>
+                  </article>
+                </li>
+                <li class="pets__slider-item">
+                  <article class="card">
+                    <img src="../img/card-img-2.jpg" alt="Jennifer - Dog" class="card__img">
+                    <h3 class="card__title">Jennifer</h3>
+                    <button class="card__btn btn">Learn More</button>
+                  </article>
+                </li>
+                <li class="pets__slider-item">
+                  <article class="card">
+                    <img src="../img/card-img-3.jpg" alt="Woody - Dog" class="card__img">
+                    <h3 class="card__title">Woody</h3>
+                    <button class="card__btn btn">Learn More</button>
+                  </article>
+                </li>
+              </ul>
+            </div>
             <button class="pets__silder-arrow-right btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path fill="#444" d="M15 7v2H4v2L1 8l3-3v2z"/></svg>
             </button>
@@ -187,42 +208,38 @@
 
   <div class="modal modal--hide">
     <div class="modal__overlay"></div>
+    <article class="card-modal">
+      <button class="card-modal__close-btn  btn"></button>
+      <div class="card-mogal__wrap-img">
+        <img class="card-mogal__img" src="../img/card-img-1.jpg" alt="Dog">
+      </div>
 
-    <div class="modal__v1">
+      <div class="card-modal__content">
+        <header class="card-modal__header">
+        <h2 class="card-modal__name">Jennifer</h2>
+        <span class="card-modal__species">Pooch + Labrador</span>
+        </header>
 
-      <article class="card-modal">
-        <button class="card-modal__close-btn  btn"></button>
-        <div class="card-mogal__wrap-img">
-          <img class="card-mogal__img" src="../img/card-img-1.jpg" alt="Dog">
-        </div>
+        <p class="card-modal__text">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur blandit condimentum. Proin accumsan lorem vel gra vida fringilla. Suspendisse potenti. Mauris ut pulvinar nunc. Donec consectetur, diam in porta tempus, urna ligula ves tibulum nibh.
+        </p>
+        <ul class="card-modal__feature-items">
+          <li class="card-modal__feature-item">
+            <span class="card-modal__feature-item-key">Age</span>: <span class="card-modal__feature-item-value">2 months</span>
+          </li>
+          <li class="card-modal__feature-item">
+            <span class="card-modal__feature-item--key">Inoculations</span>: <span class="card-modal__feature-item-value ">none</span>
+          </li>
+          <li class="card-modal__feature-item">
+            <span class="card-modal__feature-item-key">Diseases</span>: <span class="card-modal__feature-item-value">none</span>
+          </li>
+          <li class="card-modal__feature-item">
+            <span class="card-modal__feature-item-key">Parasites</span>: <span class="card-modal__feature-item-value">none</span>
+          </li>
+        </ul>
+      </div>
 
-        <div class="card-modal__content">
-          <header class="card-modal__header">
-          <h2 class="card-modal__name">Jennifer</h2>
-          <span class="card-modal__species">Pooch + Labrador</span>
-          </header>
-
-          <p class="card-modal__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce efficitur blandit condimentum. Proin accumsan lorem vel gra vida fringilla. Suspendisse potenti. Mauris ut pulvinar nunc. Donec consectetur, diam in porta tempus, urna ligula ves tibulum nibh.
-          </p>
-          <ul class="card-modal__feature-items">
-            <li class="card-modal__feature-item">
-              <span class="card-modal__feature-item-key">Age</span>: <span class="card-modal__feature-item-value">2 months</span>
-            </li>
-            <li class="card-modal__feature-item">
-              <span class="card-modal__feature-item--key">Inoculations</span>: <span class="card-modal__feature-item-value ">none</span>
-            </li>
-            <li class="card-modal__feature-item">
-              <span class="card-modal__feature-item-key">Diseases</span>: <span class="card-modal__feature-item-value">none</span>
-            </li>
-            <li class="card-modal__feature-item">
-              <span class="card-modal__feature-item-key">Parasites</span>: <span class="card-modal__feature-item-value">none</span>
-            </li>
-          </ul>
-        </div>
-
-      </article> <!-- card-modal END -->
-    </div>
+    </article> <!-- card-modal END -->
   </div> <!-- modal END -->
   <script type="text/javascript" src="js/index.js"></script>
 </body>

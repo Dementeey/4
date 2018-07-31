@@ -20,32 +20,45 @@
 
   //slider
   &__silder-wrap
-    +flex-container(row, space-between, center)
-    width: 100%
+    position: relative
+    // +flex-container(row, space-between, center)
+    width: 910px
+    +media__max-width__set-width($laptop-s-width, width, 590px)
+    +media__max-width__set-width(700px, width, 270px)
+
+  &__gallery
+    height: 500px
+    overflow: hidden
+
 
   &__slider-items
+    // position: relative
     +indenting-reset
     margin-top: 3.375rem
     list-style-type: none
-    +flex-container(row, space-between, center)
+    +flex-container(row, flex-start, center)
     flex-wrap: nowrap
+    width: 90000px
 
   &__slider-item
+    display: inline-block
     margin-right: 50px
-
-    &:last-child
-      margin-right: 0
 
 
   &__silder-arrow-left,
   &__silder-arrow-right
-    position: relative
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
     padding: 0
     width: 50px
     height: 50px
     border-radius: 50%
     background: transparent
     border: 2px solid $pets-btn-color
+
+
+
 
     .no-touch &:hover
       background-color: $pets-btn-color
@@ -56,5 +69,30 @@
       left: 50%
       transform: translate(-50%, -50%)
 
+  &__silder-arrow-left
+    left: -6.78vw
+
+
   &__silder-arrow-right
-    transform: scale(-1)
+    right: -6.78vw
+
+  &__silder-arrow-right > svg
+    transform: translate(-50%, -50%) scale(-1)
+
+  @media screen and (max-width: 700px)
+    &__silder-arrow-left
+      left: -16.78vw
+
+    &__silder-arrow-right
+      right: -16.78vw
+
+  @media screen and (max-width: 460px)
+    &__silder-arrow-left
+      left: 70px
+      top: unset
+      bottom: -55px
+
+    &__silder-arrow-right
+      right: 70px
+      top: unset
+      bottom: -55px
