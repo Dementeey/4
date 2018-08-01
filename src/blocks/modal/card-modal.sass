@@ -12,6 +12,38 @@
   max-width: 970px
   min-height: 475px
 
+  @media screen and (max-width: 600px)
+    flex-direction: column
+    width: 100vw
+    height: 100vh
+    justify-content: center
+
+    &::before
+      content: ''
+      position: absolute
+      width: 100vw
+      height: 1px
+      background: #ddd0d0
+
+  @media screen and (max-width: 550px)
+    justify-content: unset
+    padding-top: 50px
+
+    &::before
+      display: none
+
+  @media screen and (max-height: 580px) and (orientation: landscape)
+    flex-direction: row
+
+    &::before
+      display: none
+
+
+  @media screen and (max-height: 580px) and (orientation: landscape)
+    width: 100%
+    height: 100%
+    border-radius: 0
+
   &__close-btn
     position: fixed
     top: -50px
@@ -23,6 +55,18 @@
     background: transparent
     border: 1px solid  $btn-bg-hover-color
     z-index: 101
+
+    @media screen and (max-width: 600px)
+      top: 50px
+      right: 10px
+
+    @media screen and (max-height: 580px) and (orientation: landscape)
+      top: unset
+      bottom: 70px
+      right: 10px
+
+    @media screen and (max-height: 360px) and (orientation: landscape)
+      bottom: 85px
 
     &::before,
     &::after
@@ -43,13 +87,49 @@
       transform: rotate(45deg)
 
   &__wrap-img
+    width: 50%
+
+    @media screen and (max-width: 600px)
+      width: 40%
 
 
   &__img
-
+    width: 100%
 
   &__content
+    width: 50%
+    font-size: 1.154rem
 
+    @media screen and (max-width: 600px)
+      width: 100%
+
+  &__text
+    padding-right: 40px
+
+    @media screen and (max-height: 360px) and (orientation: landscape)
+      font-size: 0.9rem
+
+    @media screen and (max-width: 550px)
+      padding: 0 15px
+      width: 100%
+      text-align: center
 
   &__name
     +title-common-MT
+
+  @media screen and (max-width: 600px)
+    &__header
+      +flex-container(column, center, center)
+      width: 100%
+
+  &__feature-items
+    display: flex
+    +flex-container(column, center, center)
+    margin: 0 auto
+    width: 50%
+    padding: 0
+  &__feature-item
+    color: #f1cdb3
+
+    &>span
+      color: $secondary-color
