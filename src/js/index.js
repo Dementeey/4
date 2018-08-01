@@ -7,6 +7,9 @@ const burgerWrap    = document.querySelector('.burger-wrap');
 const burger        = document.querySelector('.burger');
 const navMenu       = document.querySelector('.page-nav__items');
 const navLinks      = document.querySelectorAll('.page-nav__link');
+const sliderItems   = document.querySelector('.pets__slider-items');
+const sliderBtnLeft   = document.querySelector('.pets__silder-arrow-left');
+const sliderBtnRight   = document.querySelector('.pets__silder-arrow-right');
 
 
 // Function
@@ -42,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (document.body.clientWidth > 600) {
     for (let i = 0; i < navLinks.length; i += 1) {
       navLinks[i].removeEventListener('click', showMobileMenu);
-      console.log('remove')
     }
   }
 
@@ -85,4 +87,16 @@ window.addEventListener('resize', ()=> {
       navLinks[i].addEventListener('click', showMobileMenu);
     }
   }
+});
+
+sliderBtnLeft.addEventListener('click', () => {
+  let val = sliderItems.style.transform;
+  sliderItems.style.transform = `translateX(0)`;
+  console.log('click left ' + val);
+});
+
+sliderBtnRight.addEventListener('click', () => {
+  let val = sliderItems.style.transform;
+  sliderItems.style.transform = `translateX(-960px)`;
+  console.log('click right ' + val);
 });
