@@ -39,6 +39,13 @@ const showMobileMenu = () => {
 
 // Events
 document.addEventListener('DOMContentLoaded', () => {
+  if (document.body.clientWidth > 600) {
+    for (let i = 0; i < navLinks.length; i += 1) {
+      navLinks[i].removeEventListener('click', showMobileMenu);
+      console.log('remove')
+    }
+  }
+
   // eslint-disable-next-line
   if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
     return document.documentElement.classList.add('touch');
@@ -67,5 +74,15 @@ window.addEventListener('resize', ()=> {
   if (navMenu.clientWidth >= 600) {
     showMobileMenu();
   }
-});
 
+  for (let i = 0; i < navLinks.length; i += 1) {
+    if (document.body.clientWidth >= 600) {
+      navLinks[i].removeEventListener('click', showMobileMenu);
+      if (i === navLinks.length - 1 ) {
+        break
+      }
+    } else {
+      navLinks[i].addEventListener('click', showMobileMenu);
+    }
+  }
+});

@@ -10,6 +10,11 @@
       padding-right: 80px
       padding-left: 0px
 
+    @media screen and (max-width: $tablet-width)
+      padding: 0 10px
+      flex-direction: column-reverse
+      text-align: center
+
   &__img
     width: 300px
     height: 400px
@@ -17,6 +22,11 @@
 
     @media screen and (max-width: $laptop-s-width)
       margin-right: 60px
+
+    @media screen and (max-width: $tablet-width)
+      padding-right: 0
+      margin: 35px 0
+
 
   &__wrap-text
     +flex-container(column, center, center)
