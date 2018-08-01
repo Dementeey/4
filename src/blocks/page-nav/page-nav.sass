@@ -25,6 +25,12 @@
         border-bottom: 1px solid $primary-color
         z-index: 9999999
 
+  @media screen and (max-width: 600px)
+    justify-content: flex-end
+
+  @media screen and (max-width: 400px)
+    justify-content: center
+
   &__item
     +flex-container(row, space-between, center)
 

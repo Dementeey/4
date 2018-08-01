@@ -1,5 +1,5 @@
 // Variables
-const cardBtn       = document.querySelectorAll('.card__btn');
+const cardBtns       = document.querySelectorAll('.card__btn');
 const modal         = document.querySelector('.modal');
 const modalOverlay  = document.querySelector('.modal__overlay');
 const modalCloseBtn = document.querySelector('.card-modal__close-btn');
@@ -53,8 +53,8 @@ document.addEventListener('keydown', (e) => {
     showModal();
   }
 })
-for (let i = 0; i < cardBtn.length; i += 1) {
-  cardBtn[i].addEventListener('click', showModal);
+for (let i = 0; i < cardBtns.length; i += 1) {
+  cardBtns[i].addEventListener('click', showModal);
 }
 modalOverlay.addEventListener('click', showModal);
 modalCloseBtn.addEventListener('click', showModal);
