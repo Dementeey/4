@@ -6,6 +6,7 @@ const modalCloseBtn = document.querySelector('.card-modal__close-btn');
 const burgerWrap    = document.querySelector('.burger-wrap');
 const burger        = document.querySelector('.burger');
 const navMenu       = document.querySelector('.page-nav__items');
+const navLinks      = document.querySelectorAll('.page-nav__link');
 
 
 // Function
@@ -56,7 +57,15 @@ document.addEventListener('keydown', (e) => {
 for (let i = 0; i < cardBtns.length; i += 1) {
   cardBtns[i].addEventListener('click', showModal);
 }
+for (let i = 0; i < navLinks.length; i += 1) {
+  navLinks[i].addEventListener('click', showMobileMenu);
+}
 modalOverlay.addEventListener('click', showModal);
 modalCloseBtn.addEventListener('click', showModal);
-
 burgerWrap.addEventListener('click', showMobileMenu);
+window.addEventListener('resize', ()=> {
+  if (navMenu.clientWidth >= 600) {
+    showMobileMenu();
+  }
+});
+
