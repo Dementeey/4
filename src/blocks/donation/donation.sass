@@ -6,8 +6,16 @@
     width: 100%
     padding: 70px 0
 
+    @media screen and (max-width: 700px)
+      flex-direction: column-reverse
+      text-align: center
+
   &__img
     width: 50%
+
+    @media screen and (max-width: 700px)
+      width: 80%
+      margin: 25px 0
 
   &__content
     +flex-container(column, space-between, flex-start)
@@ -15,6 +23,15 @@
     max-width: 360px
     min-height: 280px
     margin-left: 45px
+
+    @media screen and (max-width: 700px)
+      width: 60%
+      max-width: 100%
+      margin: 0
+
+    @media screen and (max-width: $mobile-width)
+      width: 90%
+
 
   &__title
     +title-common-MT(0rem)
@@ -26,6 +43,11 @@
     color: $secondary-color
     width: 300px
     max-width: 315px
+
+    @media screen and (max-width: 700px)
+      width: 100%
+      max-width: 100%
+      margin: 0
 
   &__bank-name
     width: 100%
@@ -63,4 +85,7 @@
     color: $donation-color
     font-size: 0.75rem
     font-family: $secondary-font-family
+
+    @media screen and (max-width: $mobile-width)
+      font-size: 1rem
 
