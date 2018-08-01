@@ -1,12 +1,27 @@
 .page-footer
   background: $bg-header-footer-color url('../img/bg-footer.jpg') no-repeat 70% 100%
   background-size: cover
-  height: 362px
+  min-height: 362px
   color: $primary-color
+
+  @media screen and (max-width: 830px)
+    background-position: 67% 100%
+
+  @media screen and (max-width: 600px)
+    background-image: none
 
   &__wrap
     +flex-container(row, space-between, flex-start)
     width: 62%
+
+    @media screen and (max-width: 600px)
+      width: 100%
+
+    @media screen and (max-width: 340px)
+      width: 100%
+      flex-direction: column
+      padding-bottom: 30px
+
 
   &__first-content,
   &__second-content
@@ -19,6 +34,14 @@
     color: inherit
     margin-bottom: 35px
 
+  &__first-title,
+  &__second-title
+    @media  (max-width: 700px)
+      font-size: 1.7rem
+
+    @media screen and (max-width: 340px)
+      width: 100vw
+
   &__first-email,
   &__first-phone,
   &__second-address
@@ -30,6 +53,9 @@
     font-size: 1.25rem
     color: $footer-color
     text-decoration: none
+
+    @media  (max-width: 700px)
+      font-size: 1rem
 
     &::before
       content: ''
