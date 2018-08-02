@@ -1,0 +1,34 @@
+.pagination
+  +indenting-reset
+  +flex-container(row, space-between, center)
+  list-style-type: none
+  width: 300px
+  height: 50px
+  margin: 65px auto
+
+  &__item
+    line-height: 50px
+
+
+    &> a
+      +flex-container(row, center, center)
+      width: 50px
+      height: 50px
+      border: 1px solid $pagination-color
+      border-radius: 50%
+      text-decoration: none
+      color: $third-color
+
+      .no-touch &:hover
+        box-shadow: 0 0 4px 0 $pagination-color
+
+
+  &__item--dots
+    color: $pagination-color
+    font-size: 2rem
+    margin-top: -12px
+
+  &__item--active
+    pointer-events: none
+    &> a
+      background-color: $pagination-color
