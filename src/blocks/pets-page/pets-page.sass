@@ -26,7 +26,24 @@
   width: 400px
   margin-right: auto
   margin-left: auto
+  margin-bottom: 60px
 
   @media screen and (max-width: 400px)
     width: 100%
     font-size: 1.8rem
+
+.grid
+  list-style-type: none
+  +flex-container(row, space-around, center)
+  flex-wrap: wrap
+  padding: 0
+  margin: -34px 0 34px -30px
+
+
+  .grid__item
+    padding: 34px 0 0 30px
+    flex: 1 1 300px
+    max-width: 300px
+
+    &:last-child
+      justify-self: flex-start

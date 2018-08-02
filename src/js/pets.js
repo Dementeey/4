@@ -72,6 +72,7 @@ burgerWrap.addEventListener('click', showMobileMenu);
 window.addEventListener('resize', ()=> {
   if (navMenu.clientWidth >= 600) {
     showMobileMenu();
+    console.log('resized!')
   }
 
   for (let i = 0; i < navLinks.length; i += 1) {
