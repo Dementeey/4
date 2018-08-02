@@ -1,0 +1,27 @@
+.pets-page-header
+  display: flex
+  align-items: center
+  min-height: 115px
+
+  @media screen and (max-width: 600px)
+    align-items: flex-end
+
+.pets-page-header .page-nav__link
+  color: $secondary-color
+
+.pets-page-header .logo__primary-text
+  color: $secondary-color
+
+.pets-page-header .logo__secondary-text
+  color: $third-color
+
+.pets-main
+  padding-top: 1px
+  background-color: $bg-gray-color
+
+.pets-main__title
+  +title-common-MT
+  text-align: center
+  width: 400px
+  margin-right: auto
+  margin-left: auto

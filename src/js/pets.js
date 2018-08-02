@@ -7,9 +7,6 @@ const burgerWrap    = document.querySelector('.burger-wrap');
 const burger        = document.querySelector('.burger');
 const navMenu       = document.querySelector('.page-nav__items');
 const navLinks      = document.querySelectorAll('.page-nav__link');
-const sliderItems   = document.querySelector('.pets__slider-items');
-const sliderBtnLeft   = document.querySelector('.pets__silder-arrow-left');
-const sliderBtnRight   = document.querySelector('.pets__silder-arrow-right');
 
 
 // Function
